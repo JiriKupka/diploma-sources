@@ -1,0 +1,36 @@
+net: "train_test.prototxt"
+
+
+# typ modifikace koeficientu uceni
+lr_policy: "inv"
+
+#  vychozi koeficient uceni
+base_lr: 0.01
+# Koeficient uceni se meni s kazdou iteraci podle vzorce
+# base_lr * (1 + gamma * iter)^(-power)
+power: 0.1
+gamma: 0.1
+# http://www.willamette.edu/~gorr/classes/cs449/momrate.html
+momentum: 0.9
+
+# Provest testovani site (rezim TEST) kazdych
+# n iteraci
+test_interval: 100
+
+# a testovat vzdy n vzorku
+test_iter: 1
+
+# Zobrazit stav uceni kazdych 50 iteraci
+display: 50
+
+# Maximalni pocet iteraci
+max_iter: 500
+
+# Ukladat mezivysledky kazdych n iteraci
+# snapshot: 100
+
+# Predpona souboru s natrenovanou siti
+snapshot_prefix: "snapshot"
+
+# provadet vypocet na CPU nebo GPU
+solver_mode: CPU # GPU
